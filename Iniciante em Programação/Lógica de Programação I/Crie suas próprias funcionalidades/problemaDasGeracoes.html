@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+    document.write('<br><br>');
+    
+    }
+
+    function mostra(problema) {
+
+        document.write(problema);
+        pulaLinha();
+
+    }
+
+    var anoInicial = 1500;
+    var anoAtual = 2022;
+    var mediaIdade = 28;
+
+    mostra(`Já se passaram ${Math.round((anoAtual - anoInicial) / mediaIdade)} gerações.`)
+
+</script>

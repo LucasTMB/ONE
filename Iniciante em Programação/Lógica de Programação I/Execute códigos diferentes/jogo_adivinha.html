@@ -1,0 +1,48 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br><br>");
+
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+
+    }
+
+    function sorteia(numMax) {
+
+        return Math.round(Math.random() * numMax);
+
+    }
+
+    function conferirPalpite() {
+        if (palpite == -1) {
+            palpite = Number(prompt(`Já pensei! O número está entre 0 e ${numMax}`));
+        } else {
+            if (palpite < numeroPensado) {
+                palpite = Number(prompt(`O valor ${palpite} está abaixo do número pensado. Tente novamente!`));
+            } else {
+                palpite = Number(prompt(`O valor ${palpite} está acima do número pensado. Tente novamente!`));
+            }
+        }
+    }
+
+    var numMax = Number(prompt("Digite o intervalo máximo a ser sorteado!"));
+    var numeroPensado = sorteia(numMax);
+    var palpite = -1;
+    var tentativas = [];
+
+    for (contador = 1 ; palpite != numeroPensado ; contador++){
+        conferirPalpite();
+        tentativas.push(contador); //Permite adicionar valores dentro no array. Nesse caso, o número do contador.
+    }
+
+    mostra(`O número pensado é ${numeroPensado}, e você chutou ${palpite}. Parabéns, você acertou em ${tentativas.length} tentativ${tentativas.length == 1 ? 'a' : 'as'}!`); //Aqui utilizei o "length", para contar quantos valores foram adicionados no array, permitindo uma contagem de tentativas. Também utilizei o operador ternário para diferenciar o singular com o plural.
+
+</script>

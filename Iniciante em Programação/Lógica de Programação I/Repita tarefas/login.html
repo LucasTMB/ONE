@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+<script>
+
+    const loginCadastrado = "alura";
+    const senhaCadastrada = "alura321";
+    var contador = 0;
+
+    function login() {
+        var loginInformado = prompt("Informe seu login");
+        var senhaInformada = prompt("Informe sua senha");
+
+        if( loginCadastrado == loginInformado && senhaCadastrada == senhaInformada ) {
+
+            alert("Bem-vindo ao sistema " + loginInformado);
+            contador = 5
+        } else {
+
+            alert("Login inválido. Tente novamente");
+            contador++
+        }
+    }
+
+    while(contador < 3) {
+        login();
+        if (contador == 3) {
+            alert('Você atingiu o limite de tentativas! Enviaremos um email para confirmar sua identidade.')
+        }
+    }
+
+</script>

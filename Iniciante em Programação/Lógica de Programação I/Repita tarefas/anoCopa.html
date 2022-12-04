@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+    document.write("<br>");
+    document.write("<br>");
+}
+
+function mostra(frase) {
+
+    document.write(frase);
+    pulaLinha();
+}
+
+let anoCopa = 1930;
+let limite = Number(prompt('Digite a data limite:'))
+let contagemCopa = 0;
+
+while (anoCopa <= limite) {
+    if (anoCopa == 1942 || anoCopa == 1946) {
+        mostra(`Não teve Copa no ano de ${anoCopa}, devido a Segunda Guerra Mundial.`);
+        anoCopa += 4
+    } else {
+        mostra(`Teve Copa no ano de ${anoCopa}.`);
+        anoCopa += 4
+        contagemCopa++
+    }
+}
+
+if (contagemCopa == 1) {
+    mostra(`No total, houve apenas ${contagemCopa} Copa até a data escolhida pelo usuário.`)
+} else {
+    mostra(`No total, houveram ${contagemCopa} Copas até a data escolhida pelo usuário.`)
+}
+
+</script>

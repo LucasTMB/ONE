@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+    document.write("<br>");
+    document.write("<br>");
+}
+
+function mostra(frase) {
+
+    document.write(frase);
+    pulaLinha();
+}
+
+var número = 30
+
+while (número <= 40) {
+
+    mostra(número);
+    número++;
+    if (número == 33 || número == 37) {
+        número++;
+    }
+    
+}
+
+mostra('FIM')
+
+</script>

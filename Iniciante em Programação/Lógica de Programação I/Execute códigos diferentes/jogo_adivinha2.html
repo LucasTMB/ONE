@@ -1,0 +1,44 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha(){
+        document.write("<br><br>");
+    }
+
+    function escreve(mensagem){
+        document.write(mensagem);
+        pulaLinha();
+    }
+
+    function sorteia(intervalo){
+        return Math.round(Math.random() * intervalo);
+    }
+
+    function conferePalpite(){
+        if(palpite == -1){
+            palpite = parseInt(prompt("Digite seu palpite entre 0 e " + intervalo + " : "));
+        }
+        else{
+            if(palpite < numeroSorteado){
+                palpite = parseInt(prompt(palpite + " é menor que o número secreto, digite um número maior"));
+            }
+            else{
+                palpite = parseInt(prompt(palpite + " é maior que o número secreto, digite um número menor"));
+            }
+        }
+    }
+
+    var intervalo = parseInt(prompt("Digite o intervalo máximo a ser sorteado:"));
+    var numeroSorteado = sorteia(intervalo);
+    var palpite = -1;
+    console.log(numeroSorteado);
+
+    while(palpite != numeroSorteado){
+
+        conferePalpite();
+    }
+
+    alert("Você acertou o número secreto. O número era: " + numeroSorteado);
+
+</script>
